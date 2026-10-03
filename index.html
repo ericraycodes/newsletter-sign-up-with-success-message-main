@@ -29,10 +29,30 @@
       rel="stylesheet"
     />
     <!-- local stylesheet -->
-    <link rel="stylesheet" href="./style/main.css">
+    <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <main>
+    <main class="signup-main">
+      <header>
+        <picture>
+          <source
+            media="(max-width: 600px)"
+            srcset="./assets/images/illustration-sign-up-mobile.svg"
+          />
+          <source
+            media="(max-width: 1080px)"
+            srcset="./assets/images/illustration-sign-up-tablet.svg"
+          />
+          <source
+            media="(max-width: 1500px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <img
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="A tablet, a browser, a graph, and a number."
+          />
+        </picture>
+      </header>
       <!-- Sign-up form start -->
       <form>
         <h1>Stay updated!</h1>
