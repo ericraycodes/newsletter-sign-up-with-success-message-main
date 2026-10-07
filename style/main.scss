@@ -1,1 +1,184 @@
-// ###           VARIABLES
+//                  VARIABLES
+// primary color
+$Red: hsl(4, 100%, 67%);
+// neutral colors
+$Blue-800: hsl(234, 29%, 20%);
+$Blue-700: hsl(235, 18%, 26%);
+$Grey: hsl(0, 0%, 58%);
+$White: hsl(0, 0%, 100%);
+// typography
+$Body-font-family: "Roboto", sans-serif, Arial, Helvetica;
+$Body-font-size: 1rem; // 16px
+// linear gradient
+$Pink-Red-linear-gradient: linear-gradient(to right, #ff527b 30%, $Red 50%);
+// box spaces
+$divided-space: calc((100vh - 840px)/5);
+$res-vert-2-5rem: clamp(2.5rem, calc(2.5rem + $divided-space), 5rem);
+$res-vert-1-5rem: clamp(1.5rem, calc(1.5rem + $divided-space), 3rem);
+// input, button padding-block
+$res-vert-1rem: clamp(1rem, calc(1rem + $divided-space/2), 1.5rem);
+
+// INITIAL RULES
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+// PARENTMOST CONTAINER, BACKGROUND
+body {
+  // background-color: $Blue-700;
+  background-color: $White;
+
+  // minimum mobile-width - 320px
+  min-width: 20rem;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+// ###          MOBILE DESIGN
+
+// ---  PRIMARY CONTAINER
+.main-component {
+  // typography
+  font-family: $Body-font-family;
+  font-size: $Body-font-size;
+
+  // styles
+  background-color: $White;
+  width: 100%;
+
+  // vertical arrangement
+  display: flex;
+  flex-direction: column;
+}
+
+// ---  BANNER
+.banner-image {
+  width: 100%;
+  display: block;
+}
+
+// ---  SIGNUP FORM
+.signup-form {
+  // box spaces
+  padding-block: $res-vert-2-5rem;
+  padding-inline: 1.5rem;
+
+  // arrange content
+  display: flex;
+  flex-direction: column;
+  gap: $res-vert-2-5rem;
+  justify-content: space-around;
+}
+.form-division {
+  display: flex;
+  flex-direction: column;
+  gap: $res-vert-1-5rem;
+}
+// SIGN-UP TEXTS
+.heading {
+  font-size: 2.5em;
+  color: $Blue-800;
+}
+.body-text {
+  font-weight: 400;
+  line-height: 1.5;
+  color: $Blue-700;
+}
+.list {
+  // remove native styles
+  list-style: none;
+  padding-inline-start: 0;
+
+  // arrange content
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.list > li::before {
+  // svg icon as custom list-style
+  content: url("../assets/images/icon-list.svg");
+  display: inline-block;
+}
+.list > li {
+  // arrange content
+  display: flex;
+  gap: 1rem;
+}
+
+// USER-EMAIL INPUT
+.user-email-input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.input-label-text {
+  font-size: 0.75em;
+  font-weight: 700;
+  color: $Blue-700;
+}
+.user-email-input {
+  // remove native styles
+  all: unset;
+
+  // styles
+  border: 1px solid $Grey;
+  border-radius: 0.5rem;
+  padding-block: $res-vert-1rem;
+  padding-inline: 1.5rem;
+}
+.user-email-input::placeholder {
+  color: $Grey;
+  font-weight: 400;
+}
+
+// SUBMIT-FORM BUTTON
+.submit-button {
+  // remove native styles
+  all: unset;
+
+  // styles
+  background-color: $Blue-800;
+  color: $White;
+  text-align: center;
+  font-weight: 700;
+  padding-block: $res-vert-1rem;
+  border-radius: 0.5rem;
+}
+
+// ---  SUCCESS MESSAGE
+.success-message-card {
+  display: none;
+}
+
+// USER-EVENT STYLES
+input:hover {
+  cursor: pointer;
+  border: 1px solid $Blue-700;
+}
+button {
+  // anchor custom-shadow position
+  position: relative;
+}
+button:hover {
+  cursor: pointer;
+  background-color: $Red;
+  background: $Pink-Red-linear-gradient;
+}
+// button linear-gradient-fake-shadow
+button::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-color: $Red;
+  background: $Pink-Red-linear-gradient;
+  filter: blur(1.5rem);
+  transform: translate(0, 1.25rem) scale(1);
+
+    display: none;
+}
+// ###  end of: MOBILE DESIGN
