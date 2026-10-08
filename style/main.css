@@ -4,7 +4,6 @@
 }
 
 body {
-  background-color: hsl(0deg, 0%, 100%);
   min-width: 20rem;
   min-height: 100vh;
   display: flex;
@@ -27,7 +26,10 @@ body {
 }
 
 .signup-form {
-  padding-block: clamp(2.5rem, 2.5rem + (100vh - 840px) / 5, 5rem);
+  -webkit-padding-before: clamp(2.5rem, 2.5rem + (100vh - 840px) / 5, 5rem);
+          padding-block-start: clamp(2.5rem, 2.5rem + (100vh - 840px) / 5, 5rem);
+  -webkit-padding-after: clamp(2.5rem, clamp(2.5rem, 2.5rem + (100vh - 840px) / 5, 5rem) + (100vh - 840px) / 5, 5rem);
+          padding-block-end: clamp(2.5rem, clamp(2.5rem, 2.5rem + (100vh - 840px) / 5, 5rem) + (100vh - 840px) / 5, 5rem);
   padding-inline: 1.5rem;
   display: flex;
   flex-direction: column;
@@ -39,6 +41,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: clamp(1.5rem, 1.5rem + (100vh - 840px) / 5, 3rem);
+  position: relative;
 }
 
 .heading {
@@ -93,17 +96,14 @@ body {
 
 .user-email-input::-moz-placeholder {
   color: hsl(0deg, 0%, 58%);
-  font-weight: 400;
 }
 
 .user-email-input:-ms-input-placeholder {
   color: hsl(0deg, 0%, 58%);
-  font-weight: 400;
 }
 
 .user-email-input::placeholder {
   color: hsl(0deg, 0%, 58%);
-  font-weight: 400;
 }
 
 .submit-button {
@@ -116,33 +116,26 @@ body {
   border-radius: 0.5rem;
 }
 
-.success-message-card {
-  display: none;
-}
-
-input:hover {
-  cursor: pointer;
-  border: 1px solid hsl(235deg, 18%, 26%);
-}
-
-button {
-  position: relative;
-}
-
+.user-email-input:hover,
 button:hover {
   cursor: pointer;
-  background-color: hsl(4deg, 100%, 67%);
-  background: linear-gradient(to right, #ff527b 30%, hsl(4deg, 100%, 67%) 50%);
 }
 
-button::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
+.user-email-input:focus-visible {
+  cursor: text;
+  outline: 0.125rem solid hsl(235deg, 18%, 26%);
+}
+
+button:focus-visible {
+  outline: 0.25rem solid hsl(4deg, 100%, 67%);
+}
+
+button:active {
   background-color: hsl(4deg, 100%, 67%);
   background: linear-gradient(to right, #ff527b 30%, hsl(4deg, 100%, 67%) 50%);
-  filter: blur(1.5rem);
-  transform: translate(0, 1.25rem) scale(1);
+  box-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4deg, 100%, 67%, 0.5);
+}
+
+.no-display {
   display: none;
 }
