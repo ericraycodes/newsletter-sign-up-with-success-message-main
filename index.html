@@ -21,18 +21,26 @@
       name="description"
       content="A FrontendMentor solution design for its JavaScript learning path challenge project."
     />
-    <!-- font 'Roboto' -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <!-- preload local font -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
+      rel="preload"
+      href="./assets/fonts/Roboto-Bold.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="preload"
+      href="./assets/fonts/Roboto-Regular.ttf"
+      as="font"
+      type="font/ttf"
+      crossorigin="anonymous"
     />
     <!-- local stylesheet -->
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <main class="main-component">
+    <main class="component signup-main">
       <header class="header">
         <picture class="picture-container">
           <source
@@ -55,47 +63,51 @@
         </picture>
       </header>
       <!-- Sign-up form start -->
-      <form class="signup-form">
-        <div class="form-division">
-          <h1 class="heading">Stay updated!</h1>
-          <p class="body-text">
-            Join 60,000+ product managers receiving monthly updates on:
-          </p>
-          <ul class="list body-text">
-            <li>Product discovery and building what matters</li>
-            <li>Measuring to ensure updates are a success</li>
-            <li>And much more!</li>
-          </ul>
-        </div>
+      <section>
+        <h1 class="heading">Stay updated!</h1>
+        <p class="text">
+          Join 60,000+ product managers receiving monthly updates on:
+        </p>
+        <ul class="list text">
+          <li>Product discovery and building what matters</li>
+          <li>Measuring to ensure updates are a success</li>
+          <li>And much more!</li>
+        </ul>
+      </section>
 
-        <div class="form-division">
-          <label class="user-email-input-container">
-            <span class="input-label-text">Email address</span>
-            <input
-              class="user-email-input"
-              id="user-email-input"
-              type="email"
-              placeholder="email@company.com"
-            />
-          </label>
-
-          <button class="submit-button" type="submit">
-            Subscribe to monthly newsletter
-          </button>
-        </div>
+      <form id="signup-form">
+        <label class="user-email-input-container">
+          <span class="input-label-text">Email address</span>
+          <input
+            class="user-email-input"
+            id="user-email-input"
+            type="email"
+            placeholder="email@company.com"
+          />
+        </label>
+        <button class="submit-button button" type="submit">
+          Subscribe to monthly newsletter
+        </button>
       </form>
       <!-- Sign-up form end -->
 
       <!-- Success message start -->
-      <output class="success-message-card">
-        <h2>Thanks for subscribing!</h2>
-
-        <p>
-          A confirmation email has been sent to ash@loremcompany.com. Please
-          open it and click the button inside to confirm your subscription.
-        </p>
-
-        <button type="button">Dismiss message</button>
+      <output class="component signup-success" form="signup-form">
+        <section>
+          <img
+            class="success-icon"
+            src="./assets/images/icon-success.svg"
+            alt="A check icon."
+          />
+          <h2 class="heading">Thanks for subscribing!</h2>
+          <p class="text">
+            A confirmation email has been sent to ash@loremcompany.com. Please
+            open it and click the button inside to confirm your subscription.
+          </p>
+        </section>
+        <button class="dismiss-button button" type="button">
+          Dismiss message
+        </button>
       </output>
       <!-- Success message end -->
     </main>
