@@ -68,8 +68,8 @@ body {
   width: 100%;
   background-color: $White;
 
-  // occupy free space, when viewport is longer than content space
-  flex: 1;
+  // // occupy free space, when viewport is longer than content space
+  // flex: 1;
 
   // vertical arrangement on content
   display: flex;
@@ -82,6 +82,10 @@ body {
   padding-inline: 1.5rem;
 
   border: 1px dashed lightgray;
+}
+.signup-main {
+  // occupy free space, when viewport is longer than content space
+  flex: 1;
 }
 
 // ---  BANNER
@@ -101,15 +105,18 @@ body {
   gap: 1.5rem;
 
   // occupy free space, when viewport is longer than content
-  flex: 1;
+  // flex: 1;
 }
 .signup-invitation {
+  // occupy free space, when viewport is longer than content
+  flex: 1;
   // arrange content, center of free space
   justify-content: center;
 }
 // SIGN-UP TEXTS
 .heading {
   font-size: 2.5em;
+  line-height: 1.1;
   color: $Blue-800;
 }
 .text {
@@ -181,13 +188,22 @@ body {
 
 // ---  SUCCESS MESSAGE
 .signup-success {
-  min-height: 100vh;
-
-  display: none;
+  // anchor .success-message's height
+  height: 100vh;
+}
+.success-message {
+  min-height: 55%;
 }
 .success-icon {
+  // dimension
   width: 4rem;
   aspect-ratio: 1/1;
+
+  // push self and siblings to the bottom of container
+  margin-block-start: auto;
+}
+.subscribed-user-email {
+  font-weight: bold;
 }
 .dismiss-button {
   // place self to the bottom

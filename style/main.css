@@ -33,7 +33,6 @@ body {
 .component {
   width: 100%;
   background-color: hsl(0deg, 0%, 100%);
-  flex: 1;
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
@@ -41,6 +40,10 @@ body {
   padding-block: 2.5rem;
   padding-inline: 1.5rem;
   border: 1px dashed lightgray;
+}
+
+.signup-main {
+  flex: 1;
 }
 
 .header {
@@ -56,15 +59,16 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
-  flex: 1;
 }
 
 .signup-invitation {
+  flex: 1;
   justify-content: center;
 }
 
 .heading {
   font-size: 2.5em;
+  line-height: 1.1;
   color: hsl(234deg, 29%, 20%);
 }
 
@@ -136,13 +140,22 @@ body {
 }
 
 .signup-success {
-  min-height: 100vh;
-  display: none;
+  height: 100vh;
+}
+
+.success-message {
+  min-height: 55%;
 }
 
 .success-icon {
   width: 4rem;
   aspect-ratio: 1/1;
+  -webkit-margin-before: auto;
+          margin-block-start: auto;
+}
+
+.subscribed-user-email {
+  font-weight: bold;
 }
 
 .dismiss-button {

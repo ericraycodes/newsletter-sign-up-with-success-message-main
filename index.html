@@ -41,7 +41,7 @@
   </head>
   <body>
     <!-- Sign-up form start -->
-    <header class="header">
+    <header class="header no-display">
       <picture class="picture-container">
         <source
           media="(max-width: 600px)"
@@ -63,8 +63,8 @@
       </picture>
     </header>
 
-    <main class="component signup-main">
-      <section class="section">
+    <main class="component signup-main no-display">
+      <section class="section signup-invitation">
         <h1 class="heading">Stay updated!</h1>
         <p class="text">
           Join 60,000+ product managers receiving monthly updates on:
@@ -95,7 +95,7 @@
 
     <!-- Success message start -->
     <aside class="component signup-success">
-      <section class="section">
+      <section class="section success-message">
         <img
           class="success-icon"
           src="./assets/images/icon-success.svg"
@@ -103,10 +103,10 @@
         />
 
         <h2 class="heading">Thanks for subscribing!</h2>
-        
+
         <p class="text">
           A confirmation email has been sent to
-          <output form="signup-form">ash@loremcompany.com</output>. Please open
+          <output class="subscribed-user-email" form="signup-form">ash@loremcompany.com</output>. Please open
           it and click the button inside to confirm your subscription.
         </p>
       </section>
