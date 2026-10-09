@@ -1,3 +1,19 @@
+// FONT ROBOTO
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Regular.ttf) format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: url(../assets/fonts/Roboto-Bold.ttf) format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 //                  VARIABLES
 // primary color
 $Red: hsl(4, 100%, 67%);
@@ -14,7 +30,7 @@ $Pink-Red-linear-gradient: linear-gradient(to right, #ff527b 30%, $Red 50%);
 // button shadow
 $Button-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4, 100%, 67%, 0.5);
 // responsive box spaces
-$divided-space: calc((100vh - 840px)/5);
+$divided-space: calc((100vh - 840px) / 5);
 $responsive-length-2-5rem: clamp(2.5rem, calc(2.5rem + $divided-space), 5rem);
 $responsive-length-1-5rem: clamp(1.5rem, calc(1.5rem + $divided-space), 3rem);
 $responsive-length-1rem: clamp(1rem, calc(1rem + $divided-space/2), 1.5rem);
@@ -24,70 +40,79 @@ $responsive-length-1rem: clamp(1rem, calc(1rem + $divided-space/2), 1.5rem);
   box-sizing: border-box;
   margin: 0;
 }
+html {
+  // typography
+  font-family: $Body-font-family;
+  font-size: $Body-font-size;
+}
 
 // PARENTMOST CONTAINER, BACKGROUND
 body {
-  // background-color: $Blue-700;
-  // background-color: $White;
+  // background visible on tablets and wider screens
+  background-color: $Blue-700;
 
   // minimum mobile-width - 320px
   min-width: 20rem;
 
+  // anchor signup form's flex grow
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
 }
 
 // ###          MOBILE DESIGN
 
-// ---  PRIMARY CONTAINER
-.main-component {
-  // typography
-  font-family: $Body-font-family;
-  font-size: $Body-font-size;
-
-  // styles
-  background-color: $White;
+// ---  PRIMARY CONTENT,
+// Both Sign-up Form and Success component
+.component {
   width: 100%;
+  background-color: $White;
 
-  // vertical arrangement
+  // occupy free space, when viewport is longer than content space
+  flex: 1;
+
+  // vertical arrangement on content
   display: flex;
   flex-direction: column;
+  gap: 2.5rem;
+  justify-content: space-around;
+
+  // box space
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
+
+  border: 1px dashed lightgray;
 }
 
 // ---  BANNER
+.header {
+  background-color: $White;
+}
 .banner-image {
   width: 100%;
   display: block;
 }
 
-// ---  SIGNUP FORM
-.signup-form {
-  // box spaces
-  padding-block-start: $responsive-length-2-5rem;
-  padding-block-end: clamp(2.5rem, calc($responsive-length-2-5rem + $divided-space), 5rem);
-  padding-inline: 1.5rem;
-
+// ---  COMPONENT SECTIONS 
+.section {
   // arrange content
   display: flex;
   flex-direction: column;
-  gap: $responsive-length-2-5rem;
-  justify-content: space-around;
-}
-.form-division {
-  display: flex;
-  flex-direction: column;
-  gap: $responsive-length-1-5rem;
+  gap: 1.5rem;
 
-  position: relative;
+  // occupy free space, when viewport is longer than content
+  flex: 1;
+}
+.signup-invitation {
+  // arrange content, center of free space
+  justify-content: center;
 }
 // SIGN-UP TEXTS
 .heading {
   font-size: 2.5em;
   color: $Blue-800;
 }
-.body-text {
+.text {
   font-weight: 400;
   line-height: 1.5;
   color: $Blue-700;
@@ -115,11 +140,13 @@ body {
 
 // USER-EMAIL INPUT
 .user-email-input-container {
+  // arrange content
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .input-label-text {
+  // typography
   font-size: 0.75em;
   font-weight: 700;
   color: $Blue-700;
@@ -131,7 +158,7 @@ body {
   // styles
   border: 1px solid $Grey;
   border-radius: 0.5rem;
-  padding-block: $responsive-length-1rem;
+  padding-block: 1rem;
   padding-inline: 1.5rem;
 }
 .user-email-input::placeholder {
@@ -139,7 +166,7 @@ body {
 }
 
 // SUBMIT-FORM BUTTON
-.submit-button {
+.button {
   // remove native styles
   all: unset;
 
@@ -148,23 +175,36 @@ body {
   color: $White;
   text-align: center;
   font-weight: 700;
-  padding-block: $responsive-length-1rem;
+  padding-block: 1rem;
   border-radius: 0.5rem;
 }
 
 // ---  SUCCESS MESSAGE
-.success-message-card {
-  // display: none;
+.signup-success {
+  min-height: 100vh;
+
+  display: none;
+}
+.success-icon {
+  width: 4rem;
+  aspect-ratio: 1/1;
+}
+.dismiss-button {
+  // place self to the bottom
+  margin-block-start: auto;
 }
 
 // USER-EVENT STYLES
 .user-email-input:hover,
-button:hover  {
+button:hover {
   cursor: pointer;
 }
 .user-email-input:focus-visible {
   cursor: text;
   outline: 0.125rem solid $Blue-700;
+
+  // make border look invisible
+  border: 1px solid $White;
 }
 button:focus-visible {
   outline: 0.25rem solid $Red;
