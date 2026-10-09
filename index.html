@@ -41,29 +41,29 @@
   </head>
   <body>
     <!-- Sign-up form start -->
-    <header class="header no-display">
-      <picture class="picture-container">
-        <source
-          media="(max-width: 600px)"
-          srcset="./assets/images/illustration-sign-up-mobile.svg"
-        />
-        <source
-          media="(max-width: 1080px)"
-          srcset="./assets/images/illustration-sign-up-tablet.svg"
-        />
-        <source
-          media="(max-width: 1500px)"
-          srcset="./assets/images/illustration-sign-up-desktop.svg"
-        />
-        <img
-          class="banner-image"
-          src="./assets/images/illustration-sign-up-desktop.svg"
-          alt="A tablet, a browser, a graph, and a number."
-        />
-      </picture>
-    </header>
+    <main class="component main-signup">
+      <header class="header">
+        <picture class="picture-container">
+          <source
+            media="(max-width: 600px)"
+            srcset="./assets/images/illustration-sign-up-mobile.svg"
+          />
+          <source
+            media="(max-width: 1080px)"
+            srcset="./assets/images/illustration-sign-up-tablet.svg"
+          />
+          <source
+            media="(max-width: 1500px)"
+            srcset="./assets/images/illustration-sign-up-desktop.svg"
+          />
+          <img
+            class="banner-image"
+            src="./assets/images/illustration-sign-up-desktop.svg"
+            alt="A tablet, a browser, a graph, and a number."
+          />
+        </picture>
+      </header>
 
-    <main class="component signup-main no-display">
       <section class="section signup-invitation">
         <h1 class="heading">Stay updated!</h1>
         <p class="text">
@@ -94,7 +94,7 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <aside class="component signup-success">
+    <aside class="component signup-success no-display">
       <section class="section success-message">
         <img
           class="success-icon"
@@ -106,8 +106,10 @@
 
         <p class="text">
           A confirmation email has been sent to
-          <output class="subscribed-user-email" form="signup-form">ash@loremcompany.com</output>. Please open
-          it and click the button inside to confirm your subscription.
+          <output class="subscribed-user-email" form="signup-form"
+            >ash@loremcompany.com</output
+          >. Please open it and click the button inside to confirm your
+          subscription.
         </p>
       </section>
 
