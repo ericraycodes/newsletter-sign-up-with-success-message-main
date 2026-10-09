@@ -53,11 +53,6 @@ body {
 
   // minimum mobile-width - 320px
   min-width: 20rem;
-
-  // anchor signup form's flex grow
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 // ###          MOBILE DESIGN
@@ -65,54 +60,46 @@ body {
 // ---  PRIMARY CONTENT,
 // Both Sign-up Form and Success component
 .component {
-  width: 100%;
   background-color: $White;
-
-  // // occupy free space, when viewport is longer than content space
-  // flex: 1;
 
   // vertical arrangement on content
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  justify-content: space-around;
+  justify-content: center;
 
   // box space
-  padding-block: 2.5rem;
-  padding-inline: 1.5rem;
+  padding-block-end: 2.5rem;
 
-  border: 1px dashed lightgray;
-}
-.signup-main {
-  // occupy free space, when viewport is longer than content space
-  flex: 1;
+  // occupy viewport space
+  min-height: 100vh;
 }
 
 // ---  BANNER
-.header {
-  background-color: $White;
-}
 .banner-image {
   width: 100%;
   display: block;
 }
 
-// ---  COMPONENT SECTIONS 
+// ---  COMPONENT SECTIONS
 .section {
   // arrange content
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+}
+.main-signup > .section {
+  // spaces
+  padding-inline: 1.5rem;
 
   // occupy free space, when viewport is longer than content
-  // flex: 1;
+  flex: 1;
 }
 .signup-invitation {
-  // occupy free space, when viewport is longer than content
-  flex: 1;
-  // arrange content, center of free space
+  // arrange content, center when there is free space
   justify-content: center;
 }
+
 // SIGN-UP TEXTS
 .heading {
   font-size: 2.5em;
@@ -190,6 +177,11 @@ body {
 .signup-success {
   // anchor .success-message's height
   height: 100vh;
+  min-height: unset;
+
+  // spaces
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
 }
 .success-message {
   min-height: 55%;
@@ -200,6 +192,7 @@ body {
   aspect-ratio: 1/1;
 
   // push self and siblings to the bottom of container
+  // so that they will appear around the center of the viewport
   margin-block-start: auto;
 }
 .subscribed-user-email {
@@ -231,6 +224,26 @@ button:active {
   box-shadow: $Button-shadow;
 }
 // ###  end of: MOBILE DESIGN
+
+// ###    TABLETS: 600px
+@media screen and (min-width: 37.5rem) {
+  body {
+    // remove some mobile rules
+    min-height: unset;
+
+    // spaces
+    padding: 2.5rem;
+  }
+  .header {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+  .signup-main {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+}
+// ###  end of: TABLETS
 
 // styled classes
 .no-display {

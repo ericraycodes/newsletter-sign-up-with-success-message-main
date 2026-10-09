@@ -25,29 +25,17 @@ html {
 body {
   background-color: hsl(235deg, 18%, 26%);
   min-width: 20rem;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
 }
 
 .component {
-  width: 100%;
   background-color: hsl(0deg, 0%, 100%);
   display: flex;
   flex-direction: column;
   gap: 2.5rem;
-  justify-content: space-around;
-  padding-block: 2.5rem;
-  padding-inline: 1.5rem;
-  border: 1px dashed lightgray;
-}
-
-.signup-main {
-  flex: 1;
-}
-
-.header {
-  background-color: hsl(0deg, 0%, 100%);
+  justify-content: center;
+  -webkit-padding-after: 2.5rem;
+          padding-block-end: 2.5rem;
+  min-height: 100vh;
 }
 
 .banner-image {
@@ -61,8 +49,12 @@ body {
   gap: 1.5rem;
 }
 
-.signup-invitation {
+.main-signup > .section {
+  padding-inline: 1.5rem;
   flex: 1;
+}
+
+.signup-invitation {
   justify-content: center;
 }
 
@@ -141,6 +133,9 @@ body {
 
 .signup-success {
   height: 100vh;
+  min-height: unset;
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
 }
 
 .success-message {
@@ -184,6 +179,20 @@ button:active {
   box-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4deg, 100%, 67%, 0.5);
 }
 
+@media screen and (min-width: 37.5rem) {
+  body {
+    min-height: unset;
+    padding: 2.5rem;
+  }
+  .header {
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
+  .signup-main {
+    border-bottom-left-radius: 1.5rem;
+    border-bottom-right-radius: 1.5rem;
+  }
+}
 .no-display {
   display: none;
 }
