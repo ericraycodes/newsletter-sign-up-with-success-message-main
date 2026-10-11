@@ -47,6 +47,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 
 .main-signup > .section {
@@ -156,6 +157,7 @@ body {
 .dismiss-button {
   -webkit-margin-before: auto;
           margin-block-start: auto;
+  width: 100%;
 }
 
 .user-email-input:hover,
@@ -179,18 +181,31 @@ button:active {
   box-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4deg, 100%, 67%, 0.5);
 }
 
-@media screen and (min-width: 37.5rem) {
+@media screen and (min-width: 30rem) {
+  .component {
+    padding-block: 2.5rem;
+    padding-inline: 2.5rem;
+    align-items: center;
+  }
+  .main-signup > .section {
+    flex: 0;
+    padding-inline: unset;
+  }
+}
+@media screen and (min-width: 35rem) {
   body {
+    padding-block: 4rem;
+    padding-inline: 3rem;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .component {
     min-height: unset;
-    padding: 2.5rem;
-  }
-  .header {
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-  }
-  .signup-main {
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+    border-radius: 1rem;
+    max-width: 37rem;
   }
 }
 .no-display {

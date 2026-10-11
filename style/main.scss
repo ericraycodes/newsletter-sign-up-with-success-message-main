@@ -56,6 +56,7 @@ body {
 }
 
 // ###          MOBILE DESIGN
+// starts at 320px
 
 // ---  PRIMARY CONTENT,
 // Both Sign-up Form and Success component
@@ -87,6 +88,7 @@ body {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
 }
 .main-signup > .section {
   // spaces
@@ -201,6 +203,8 @@ body {
 .dismiss-button {
   // place self to the bottom
   margin-block-start: auto;
+
+  width: 100%;
 }
 
 // USER-EVENT STYLES
@@ -225,24 +229,54 @@ button:active {
 }
 // ###  end of: MOBILE DESIGN
 
-// ###    TABLETS: 600px
-@media screen and (min-width: 37.5rem) {
-  body {
-    // remove some mobile rules
-    min-height: unset;
-
+// ###    PHABLETS: starts at 480px
+@media screen and (min-width: 30rem) {
+  .component {
     // spaces
-    padding: 2.5rem;
+    padding-block: 2.5rem;
+    padding-inline: 2.5rem;
+
+    // arrange content boxes
+    align-items: center;
   }
-  .header {
-    border-top-left-radius: 1.5rem;
-    border-top-right-radius: 1.5rem;
-  }
-  .signup-main {
-    border-bottom-left-radius: 1.5rem;
-    border-bottom-right-radius: 1.5rem;
+  .main-signup > .section {
+    // do not occupy free space to justify center all siblings
+    flex: 0;
+
+    // remove inline padding to align with banner img width
+    padding-inline: unset;
   }
 }
+// 560px
+@media screen and (min-width: 35rem) {
+  body {
+    // spaces
+    padding-block: 4rem;
+    padding-inline: 3rem;
+
+    // center content
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .component {
+    // allow self be centered, show background
+    min-height: unset;
+
+    // style
+    border-radius: 1rem;
+
+    // max-width, to keep banner image dimension balance with content
+    max-width: 37rem;   // 592px
+  }
+}
+// ###  end of: PHABLETS
+
+// ###    TABLETS: 768px
+// @media screen and (min-width: 48rem) {
+// }
 // ###  end of: TABLETS
 
 // styled classes
