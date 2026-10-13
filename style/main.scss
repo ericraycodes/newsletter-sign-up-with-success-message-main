@@ -29,11 +29,7 @@ $Body-font-size: 1rem; // 16px
 $Pink-Red-linear-gradient: linear-gradient(to right, #ff527b 30%, $Red 50%);
 // button shadow
 $Button-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4, 100%, 67%, 0.5);
-// responsive box spaces
-$divided-space: calc((100vh - 840px) / 5);
-$responsive-length-2-5rem: clamp(2.5rem, calc(2.5rem + $divided-space), 5rem);
-$responsive-length-1-5rem: clamp(1.5rem, calc(1.5rem + $divided-space), 3rem);
-$responsive-length-1rem: clamp(1rem, calc(1rem + $divided-space/2), 1.5rem);
+
 
 // INITIAL RULES
 * {
@@ -136,16 +132,18 @@ body {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-}
-.list > li::before {
-  // svg icon as custom list-style
-  content: url("../assets/images/icon-list.svg");
-  display: inline-block;
-}
-.list > li {
-  // arrange content
-  display: flex;
-  gap: 1rem;
+
+  // custom list-marker
+  li::before {
+    // svg icon as custom marker
+    content: url("../assets/images/icon-list.svg");
+    display: inline-block;
+  }
+  li {
+    // arrange content
+    display: flex;
+    gap: 1rem;
+  }
 }
 
 // USER-EMAIL INPUT
@@ -241,20 +239,15 @@ button:active {
 
 // ###    PHABLETS, TABLETS: starts at 480px
 @media screen and (min-width: 30rem) {
-  .component {
+  .main-content {
     // spaces
-    padding-block: 2.5rem;
-    padding-inline: 2.5rem;
-
-    // arrange content boxes
-    align-items: center;
+    padding-block-start: 1.5rem;
+    padding-block-end: 2.5rem;
+    padding-inline: 1.5rem;
+    gap: 2.5rem;
   }
-  .main-signup > .section {
-    // do not occupy free space to justify center all siblings
-    flex: 0;
-
-    // remove inline padding to align with banner img width
-    padding-inline: unset;
+  .component {
+    padding: unset;
   }
 }
 // 560px
@@ -269,17 +262,35 @@ button:active {
 
     // spaces
     padding-block: 4rem;
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
-  .component {
+  .main-content {
     // allow self be centered, show background
     min-height: unset;
 
     // style
-    border-radius: 1rem;
+    border-radius: 2rem;
 
     // 592px max-width, to keep banner image dimension balanced with content
-    max-width: 37rem;
+    max-width: 35rem;
+  }
+  .success-message {
+    // 464px maximum width
+    max-width: 29rem; 
+    height: auto;
+    
+    // spaces
+    padding: 2.5rem;
+  }
+  .message-body {
+    flex: 0;
+
+    .heading {
+      font-size: 3.5rem;
+    }
+  }
+  .dismiss-button {
+    margin-block-start: unset;
   }
 }
 // ###  end of: PHABLETS, TABLETS

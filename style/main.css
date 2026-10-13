@@ -88,13 +88,11 @@ body {
   flex-direction: column;
   gap: 0.5rem;
 }
-
-.list > li::before {
+.list li::before {
   content: url("../assets/images/icon-list.svg");
   display: inline-block;
 }
-
-.list > li {
+.list li {
   display: flex;
   gap: 1rem;
 }
@@ -188,14 +186,16 @@ button:active {
 }
 
 @media screen and (min-width: 30rem) {
-  .component {
-    padding-block: 2.5rem;
-    padding-inline: 2.5rem;
-    align-items: center;
+  .main-content {
+    -webkit-padding-before: 1.5rem;
+            padding-block-start: 1.5rem;
+    -webkit-padding-after: 2.5rem;
+            padding-block-end: 2.5rem;
+    padding-inline: 1.5rem;
+    gap: 2.5rem;
   }
-  .main-signup > .section {
-    flex: 0;
-    padding-inline: unset;
+  .component {
+    padding: unset;
   }
 }
 @media screen and (min-width: 35rem) {
@@ -206,12 +206,27 @@ button:active {
     justify-content: center;
     align-items: center;
     padding-block: 4rem;
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
-  .component {
+  .main-content {
     min-height: unset;
-    border-radius: 1rem;
-    max-width: 37rem;
+    border-radius: 2rem;
+    max-width: 35rem;
+  }
+  .success-message {
+    max-width: 29rem;
+    height: auto;
+    padding: 2.5rem;
+  }
+  .message-body {
+    flex: 0;
+  }
+  .message-body .heading {
+    font-size: 3.5rem;
+  }
+  .dismiss-button {
+    -webkit-margin-before: unset;
+            margin-block-start: unset;
   }
 }
 .no-display {
