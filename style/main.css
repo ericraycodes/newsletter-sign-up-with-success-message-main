@@ -210,7 +210,7 @@ button:active {
   }
   .main-content {
     min-height: unset;
-    border-radius: 2rem;
+    border-radius: 2.5rem;
     max-width: 35rem;
   }
   .success-message {
@@ -227,6 +227,24 @@ button:active {
   .dismiss-button {
     -webkit-margin-before: unset;
             margin-block-start: unset;
+  }
+}
+@media screen and (min-width: 64rem) {
+  .main-content {
+    flex-direction: row-reverse;
+    gap: 1.5rem;
+    -webkit-padding-after: 1.5rem;
+            padding-block-end: 1.5rem;
+    max-width: 58rem;
+  }
+  .signup-form {
+    padding-inline: 2.5rem;
+  }
+  .signup-form .section {
+    flex: unset;
+  }
+  .signup-form .heading {
+    font-size: 3.5rem;
   }
 }
 .no-display {

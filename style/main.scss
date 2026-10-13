@@ -30,7 +30,6 @@ $Pink-Red-linear-gradient: linear-gradient(to right, #ff527b 30%, $Red 50%);
 // button shadow
 $Button-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4, 100%, 67%, 0.5);
 
-
 // INITIAL RULES
 * {
   box-sizing: border-box;
@@ -269,16 +268,16 @@ button:active {
     min-height: unset;
 
     // style
-    border-radius: 2rem;
+    border-radius: 2.5rem;
 
     // 592px max-width, to keep banner image dimension balanced with content
     max-width: 35rem;
   }
   .success-message {
     // 464px maximum width
-    max-width: 29rem; 
+    max-width: 29rem;
     height: auto;
-    
+
     // spaces
     padding: 2.5rem;
   }
@@ -290,18 +289,38 @@ button:active {
     }
   }
   .dismiss-button {
+    // bring self back to vertical center
     margin-block-start: unset;
   }
 }
 // ###  end of: PHABLETS, TABLETS
 
-// ###    DESKTOP, WIDER SCREENS: starts at 768px
-// @media screen and (min-width: 48rem) {
-//   .component {
-//     // horizontal content arrangement
+// ###    DESKTOP, WIDER SCREENS: starts at 1024px
+@media screen and (min-width: 64rem) {
+  .main-content {
+    // horizontal content arrangement
+    flex-direction: row-reverse;
+    gap: 1.5rem;
 
-//   }
-// }
+    // spaces
+    padding-block-end: 1.5rem;
+
+    // 936px maximum
+    max-width: 58rem;
+  }
+  .signup-form {
+    // spaces
+    padding-inline: 2.5rem;
+
+    .section {
+      // bring sections back to vertical center
+      flex: unset;
+    }
+    .heading {
+      font-size: 3.5rem;
+    }
+  }
+}
 // ###  end of: DESKTOP, WIDER SCREENS
 
 // styled classes
