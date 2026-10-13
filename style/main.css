@@ -27,20 +27,30 @@ body {
   min-width: 20rem;
 }
 
-.component {
+.main-content {
   background-color: hsl(0deg, 0%, 100%);
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  justify-content: center;
-  -webkit-padding-after: 2.5rem;
-          padding-block-end: 2.5rem;
-  min-height: 100vh;
 }
 
 .banner-image {
   width: 100%;
   display: block;
+}
+
+.component {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
+}
+
+.signup-form {
+  flex: 1;
 }
 
 .section {
@@ -50,12 +60,11 @@ body {
   width: 100%;
 }
 
-.main-signup > .section {
-  padding-inline: 1.5rem;
+.signup-form > .section {
   flex: 1;
 }
 
-.signup-invitation {
+.signup-body {
   justify-content: center;
 }
 
@@ -132,15 +141,12 @@ body {
   border-radius: 0.5rem;
 }
 
-.signup-success {
+.success-message {
   height: 100vh;
-  min-height: unset;
-  padding-block: 2.5rem;
-  padding-inline: 1.5rem;
 }
 
-.success-message {
-  min-height: 55%;
+.message-body {
+  flex: 0 1 55%;
 }
 
 .success-icon {
@@ -194,13 +200,13 @@ button:active {
 }
 @media screen and (min-width: 35rem) {
   body {
-    padding-block: 4rem;
-    padding-inline: 3rem;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-block: 4rem;
+    padding-inline: 3rem;
   }
   .component {
     min-height: unset;

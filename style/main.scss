@@ -58,28 +58,43 @@ body {
 // ###          MOBILE DESIGN
 // starts at 320px
 
-// ---  PRIMARY CONTENT,
-// Both Sign-up Form and Success component
-.component {
+// ---  PRIMARY CONTENT
+// Houses both Sign-up Form and Success message
+.main-content {
   background-color: $White;
+
+  // occupy viewport space when content space has lesser
+  min-height: 100vh;
 
   // vertical arrangement on content
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
-  justify-content: center;
-
-  // box space
-  padding-block-end: 2.5rem;
-
-  // occupy viewport space
-  min-height: 100vh;
 }
 
 // ---  BANNER
 .banner-image {
   width: 100%;
   display: block;
+}
+
+// ---  COMPONENTS
+// The sign-up form and success message.
+.component {
+  // arrange content
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+
+  // spaces
+  padding-block: 2.5rem;
+  padding-inline: 1.5rem;
+}
+.signup-form {
+  // for balanced content arrangement
+  // against available space
+  flex: 1;
 }
 
 // ---  COMPONENT SECTIONS
@@ -90,15 +105,14 @@ body {
   gap: 1.5rem;
   width: 100%;
 }
-.main-signup > .section {
-  // spaces
-  padding-inline: 1.5rem;
-
-  // occupy free space, when viewport is longer than content
+.signup-form > .section {
+  // for balanced content arrangement
+  // against available space
   flex: 1;
 }
-.signup-invitation {
-  // arrange content, center when there is free space
+.signup-body {
+  // arrange content to center
+  // when there is free space
   justify-content: center;
 }
 
@@ -176,17 +190,13 @@ body {
 }
 
 // ---  SUCCESS MESSAGE
-.signup-success {
-  // anchor .success-message's height
-  height: 100vh;
-  min-height: unset;
-
-  // spaces
-  padding-block: 2.5rem;
-  padding-inline: 1.5rem;
-}
 .success-message {
-  min-height: 55%;
+  // anchor the message body's height
+  height: 100vh;
+}
+.message-body {
+  flex: 0 1 55%;
+  // min-height: 55%;
 }
 .success-icon {
   // dimension
@@ -229,7 +239,7 @@ button:active {
 }
 // ###  end of: MOBILE DESIGN
 
-// ###    PHABLETS: starts at 480px
+// ###    PHABLETS, TABLETS: starts at 480px
 @media screen and (min-width: 30rem) {
   .component {
     // spaces
@@ -250,16 +260,16 @@ button:active {
 // 560px
 @media screen and (min-width: 35rem) {
   body {
-    // spaces
-    padding-block: 4rem;
-    padding-inline: 3rem;
-
     // center content
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
+    // spaces
+    padding-block: 4rem;
+    padding-inline: 3rem;
   }
   .component {
     // allow self be centered, show background
@@ -268,16 +278,20 @@ button:active {
     // style
     border-radius: 1rem;
 
-    // max-width, to keep banner image dimension balance with content
-    max-width: 37rem;   // 592px
+    // 592px max-width, to keep banner image dimension balanced with content
+    max-width: 37rem;
   }
 }
-// ###  end of: PHABLETS
+// ###  end of: PHABLETS, TABLETS
 
-// ###    TABLETS: 768px
+// ###    DESKTOP, WIDER SCREENS: starts at 768px
 // @media screen and (min-width: 48rem) {
+//   .component {
+//     // horizontal content arrangement
+
+//   }
 // }
-// ###  end of: TABLETS
+// ###  end of: DESKTOP, WIDER SCREENS
 
 // styled classes
 .no-display {
