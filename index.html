@@ -40,19 +40,18 @@
     <link rel="stylesheet" href="./style/main.css" />
   </head>
   <body>
-    <!-- Sign-up form start -->
-    <main class="component main-signup ">
-      <picture class="picture-container">
+    <main class="main-content">
+      <picture class="">
         <source
           media="(max-width: 479px)"
           srcset="./assets/images/illustration-sign-up-mobile.svg"
         />
         <source
-          media="(max-width: 1080px)"
+          media="(max-width: 1023px)"
           srcset="./assets/images/illustration-sign-up-tablet.svg"
         />
         <source
-          media="(max-width: 1500px)"
+          media="(min-width: 1024 px)"
           srcset="./assets/images/illustration-sign-up-desktop.svg"
         />
         <img
@@ -62,59 +61,62 @@
         />
       </picture>
 
-      <section class="section signup-invitation">
-        <h1 class="heading">Stay updated!</h1>
-        <p class="text">
-          Join 60,000+ product managers receiving monthly updates on:
-        </p>
-        <ul class="list text">
-          <li>Product discovery and building what matters</li>
-          <li>Measuring to ensure updates are a success</li>
-          <li>And much more!</li>
-        </ul>
-      </section>
+      <!-- Sign-up form start -->
+      <form id="signup-form" class="component signup-form ">
+        <section class="section signup-body">
+          <h1 class="heading">Stay updated!</h1>
+          <p class="text">
+            Join 60,000+ product managers receiving monthly updates on:
+          </p>
+          <ul class="list text">
+            <li>Product discovery and building what matters</li>
+            <li>Measuring to ensure updates are a success</li>
+            <li>And much more!</li>
+          </ul>
+        </section>
 
-      <form id="signup-form" class="section">
-        <label class="user-email-input-container">
-          <span class="input-label-text">Email address</span>
-          <input
-            class="user-email-input"
-            id="user-email-input"
-            type="email"
-            placeholder="email@company.com"
-          />
-        </label>
-        <button class="submit-button button" type="submit">
-          Subscribe to monthly newsletter
-        </button>
+        <section class="section">
+          <label class="user-email-input-container">
+            <span class="input-label-text">Email address</span>
+            <input
+              class="user-email-input"
+              id="user-email-input"
+              type="email"
+              placeholder="email@company.com"
+            />
+          </label>
+          <button class="submit-button button" type="submit">
+            Subscribe to monthly newsletter
+          </button>
+        </section>
       </form>
+      <!-- Sign-up form end -->
+
+      <!-- Success message start -->
+      <aside class="component success-message no-display">
+        <section class="section message-body">
+          <img
+            class="success-icon"
+            src="./assets/images/icon-success.svg"
+            alt="A check icon."
+          />
+
+          <h2 class="heading">Thanks for subscribing!</h2>
+
+          <p class="text">
+            A confirmation email has been sent to
+            <output class="subscribed-user-email" form="signup-form"
+              >ash@loremcompany.com</output
+            >. Please open it and click the button inside to confirm your
+            subscription.
+          </p>
+        </section>
+
+        <button class="dismiss-button button" type="button">
+          Dismiss message
+        </button>
+      </aside>
+      <!-- Success message end -->
     </main>
-    <!-- Sign-up form end -->
-
-    <!-- Success message start -->
-    <aside class="component signup-success ">
-      <section class="section success-message">
-        <img
-          class="success-icon"
-          src="./assets/images/icon-success.svg"
-          alt="A check icon."
-        />
-
-        <h2 class="heading">Thanks for subscribing!</h2>
-
-        <p class="text">
-          A confirmation email has been sent to
-          <output class="subscribed-user-email" form="signup-form"
-            >ash@loremcompany.com</output
-          >. Please open it and click the button inside to confirm your
-          subscription.
-        </p>
-      </section>
-
-      <button class="dismiss-button button" type="button">
-        Dismiss message
-      </button>
-    </aside>
-    <!-- Success message end -->
   </body>
 </html>
