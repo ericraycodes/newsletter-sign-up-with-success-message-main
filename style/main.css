@@ -250,3 +250,25 @@ button:active {
 .no-display {
   display: none;
 }
+
+.invalid-user-input .user-email-input-container {
+  position: relative;
+}
+.invalid-user-input .user-email-input-container::before {
+  content: "Valid email required";
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 0.75em;
+  font-weight: 700;
+  color: hsl(4deg, 100%, 67%);
+}
+.invalid-user-input .user-email-input {
+  border: 1px solid hsl(4deg, 100%, 67%);
+  background-color: hsla(4deg, 100%, 67%, 0.1);
+  color: hsl(4deg, 100%, 67%);
+}
+.invalid-user-input .user-email-input:focus-visible {
+  outline: 0.125rem solid hsl(4deg, 100%, 67%);
+  border: 1px solid hsl(0deg, 0%, 100%);
+}

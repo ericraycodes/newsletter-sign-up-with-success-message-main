@@ -22,6 +22,8 @@ $Blue-800: hsl(234, 29%, 20%);
 $Blue-700: hsl(235, 18%, 26%);
 $Grey: hsl(0, 0%, 58%);
 $White: hsl(0, 0%, 100%);
+// icon list orange
+$Orange: #ff6155;
 // typography
 $Body-font-family: "Roboto", sans-serif, Arial, Helvetica;
 $Body-font-size: 1rem; // 16px
@@ -323,7 +325,34 @@ button:active {
 }
 // ###  end of: DESKTOP, WIDER SCREENS
 
-// styled classes
+
+// --- STYLED CLASSES
 .no-display {
   display: none;
+}
+.invalid-user-input {
+  .user-email-input-container {
+    // anchor position of "Valid email required" alert 
+    position: relative;
+  }
+  .user-email-input-container::before {
+    content: "Valid email required";
+    // place at the upper-right, on top of input
+    position: absolute;
+    top: 0;
+    right: 0;
+    // typography
+    font-size: 0.75em;
+    font-weight: 700;
+    color: $Red;
+  }
+  .user-email-input {
+    border: 1px solid $Red;
+    background-color: hsla(4, 100%, 67%, 0.1);
+    color: $Red;
+  }
+  .user-email-input:focus-visible {
+    outline: 0.125rem solid $Red;
+    border: 1px solid $White;
+  }
 }
