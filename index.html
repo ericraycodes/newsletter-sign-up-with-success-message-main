@@ -38,10 +38,12 @@
     />
     <!-- local stylesheet -->
     <link rel="stylesheet" href="./style/main.css" />
+    <!-- javascript -->
+    <script src="./main.js" defer></script>
   </head>
   <body>
     <main class="main-content">
-      <picture class=" ">
+      <picture id="banner">
         <source
           media="(max-width: 479.9px)"
           srcset="./assets/images/illustration-sign-up-mobile.svg"
@@ -62,7 +64,7 @@
       </picture>
 
       <!-- Sign-up form start -->
-      <form id="signup-form" class="component signup-form ">
+      <form id="signup-form" class="component signup-form " novalidate>
         <section class="section signup-body">
           <h1 class="heading">Stay updated!</h1>
           <p class="text">
@@ -75,7 +77,7 @@
           </ul>
         </section>
 
-        <section class="section">
+        <section id="user-input-section" class="section">
           <label class="user-email-input-container">
             <span class="input-label-text">Email address</span>
             <input
@@ -85,7 +87,7 @@
               placeholder="email@company.com"
             />
           </label>
-          <button class="submit-button button" type="submit">
+          <button id="submit-button" class="submit-button button" type="submit">
             Subscribe to monthly newsletter
           </button>
         </section>
@@ -93,7 +95,7 @@
       <!-- Sign-up form end -->
 
       <!-- Success message start -->
-      <aside class="component success-message no-display">
+      <aside id="success-message" class="component success-message no-display">
         <section class="section message-body">
           <img
             class="success-icon"
@@ -105,14 +107,14 @@
 
           <p class="text">
             A confirmation email has been sent to
-            <output class="subscribed-user-email" form="signup-form"
+            <output id="signed-up-user-email" class="signed-up-user-email" form="signup-form"
               >ash@loremcompany.com</output
             >. Please open it and click the button inside to confirm your
             subscription.
           </p>
         </section>
 
-        <button class="dismiss-button button" type="button">
+        <button id="dismiss-button" class="dismiss-button button" type="button">
           Dismiss message
         </button>
       </aside>
