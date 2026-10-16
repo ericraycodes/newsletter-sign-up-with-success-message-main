@@ -175,6 +175,11 @@ button:hover {
   border: 1px solid hsl(0deg, 0%, 100%);
 }
 
+.user-email-input:-webkit-autofill {
+  box-shadow: 0 0 0 20rem hsl(0deg, 0%, 100%) inset;
+  -webkit-text-fill-color: hsl(235deg, 18%, 26%);
+}
+
 button:focus-visible {
   outline: 0.25rem solid hsl(4deg, 100%, 67%);
 }
@@ -265,10 +270,14 @@ button:active {
 }
 .invalid-user-input .user-email-input {
   border: 1px solid hsl(4deg, 100%, 67%);
-  background-color: hsla(4deg, 100%, 67%, 0.1);
+  background-color: hsl(4deg, 100%, 97%);
   color: hsl(4deg, 100%, 67%);
 }
 .invalid-user-input .user-email-input:focus-visible {
   outline: 0.125rem solid hsl(4deg, 100%, 67%);
   border: 1px solid hsl(0deg, 0%, 100%);
+}
+.invalid-user-input .user-email-input:-webkit-autofill {
+  box-shadow: 0 0 0 20rem hsl(4deg, 100%, 97%) inset;
+  -webkit-text-fill-color: hsl(4deg, 100%, 67%);
 }
