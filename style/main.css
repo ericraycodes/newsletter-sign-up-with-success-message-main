@@ -154,7 +154,7 @@ body {
           margin-block-start: auto;
 }
 
-.subscribed-user-email {
+.signed-up-user-email {
   font-weight: bold;
 }
 
@@ -184,7 +184,8 @@ button:focus-visible {
   outline: 0.25rem solid hsl(4deg, 100%, 67%);
 }
 
-button:active {
+button:active,
+.button-keydown {
   background-color: hsl(4deg, 100%, 67%);
   background: linear-gradient(to right, #ff527b 30%, hsl(4deg, 100%, 67%) 50%);
   box-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4deg, 100%, 67%, 0.5);

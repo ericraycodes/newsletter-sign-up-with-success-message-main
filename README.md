@@ -41,11 +41,24 @@ Users should be able to:
 - Semantic HTML5 markup
 - SASS
 - Flexbox
-- CSS Grid
 - Mobile-first workflow
 - JavaScript
 
 ### What I learned
+
+I learned how to CSS style over a browser's autofill since it forces its own *background-color* and *color* properties with *!important*.
+```css
+.user-email-input:-webkit-autofill {
+    /* box-shadow style over the background-color */
+    box-shadow: 0 0 0 20rem hsl(4, 100%, 97%) inset;
+    /* vendor style over color property */
+    -webkit-text-fill-color: $Red;
+  }
+```
+
+I learned that not all User Agents are similar in responding to styles. Some of the popular browsers do not apply CSS styles on `:active` pseudoclass when they should. **Everything should be tested across browsers from the start.**
+
+I realized that **semantic markup** is the start to efficient project schedule. When I was unsure and changing my HTML structure the CSS will have to adjust as well.
 
 ### Continued development
 

@@ -31,6 +31,9 @@ $Body-font-size: 1rem; // 16px
 $Pink-Red-linear-gradient: linear-gradient(to right, #ff527b 30%, $Red 50%);
 // button shadow
 $Button-shadow: 0rem 1rem 1.5rem -0.125rem hsla(4, 100%, 67%, 0.5);
+// for the error indicator
+$Very-light-red: hsl(4, 100%, 97%);
+
 
 // INITIAL RULES
 * {
@@ -206,7 +209,7 @@ body {
   // so that they will appear around the center of the viewport
   margin-block-start: auto;
 }
-.subscribed-user-email {
+.signed-up-user-email {
   font-weight: bold;
 }
 .dismiss-button {
@@ -236,7 +239,8 @@ button:hover {
 button:focus-visible {
   outline: 0.25rem solid $Red;
 }
-button:active {
+button:active,
+.button-keydown {
   background-color: $Red; // fallback background
   background: $Pink-Red-linear-gradient;
   box-shadow: $Button-shadow;
@@ -330,14 +334,18 @@ button:active {
 }
 // ###  end of: DESKTOP, WIDER SCREENS
 
-
 // --- STYLED CLASSES
 .no-display {
   display: none;
 }
+
+// Invalid email input indicator styles.
+// The '.invalid-user-input' classname will be assigned
+// to the <label.user-email-input-container> dynamically
+// when input is invalid.
 .invalid-user-input {
   .user-email-input-container {
-    // anchor position of "Valid email required" alert 
+    // anchor position of "Valid email required" alert
     position: relative;
   }
   .user-email-input-container::before {
